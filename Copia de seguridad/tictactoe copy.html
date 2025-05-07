@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/functions.js"></script>
+    </head>
+    <body>
+        <div class="game-container">
+
+            <div class="board-section">
+                <table class="tablero">
+                    <tr>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                        <td><input type="button" onclick="turno(this)"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Sección de controles (derecha) -->
+            <div class="controls-section">
+                <div class="control-group-title">
+                    <div class="status-section">
+                        <h2 id="Turno">Turno: <span
+                                class="turno-actual">X</span></h2>
+                        <h2 id="Ganador" class="ganador-text"></h2>
+                    </div>
+
+                    <div class="timer-restart">
+                        <div class="timer-box">
+                            <h3>Tiempo</h3>
+                            <p id="TiempoGlobal">03:00</p>
+                        </div>
+
+                        <input type="button" id="Reiniciar" value="Reiniciar"
+                            onclick="reiniciar()">
+                    </div>
+                </div>
+
+                <div class="control-group">
+
+                    <h3>Imágenes para X</h3>
+                    <div class="image-buttons">
+                        <button onclick="cambiarImagenX('./img/equis/1.png')">
+                            <img src="./img/equis/1.png" alt="Equis" width="50"
+                                height="50">
+                        </button>
+                        <button onclick="cambiarImagenX('./img/equis/2.png')">
+                            <img src="./img/equis/2.png" alt="Equis" width="50"
+                                height="50">
+                        </button>
+                        <button onclick="cambiarImagenX('./img/equis/3.png')">
+                            <img src="./img/equis/3.png" alt="Equis" width="50"
+                                height="50">
+                        </button>
+                    </div>
+                    <h3>Imágenes para O</h3>
+                    <div class="image-buttons">
+                        <button onclick="cambiarImagenO('./img/circulo/1.png')">
+                            <img src="./img/circulo/1.png" alt="Circulo"
+                                width="50" height="50">
+                        </button>
+                        <button onclick="cambiarImagenO('./img/circulo/2.png')">
+                            <img src="./img/circulo/2.png" alt="Circulo"
+                                width="50" height="50">
+                        </button>
+                        <button onclick="cambiarImagenO('./img/circulo/3.png')">
+                            <img src="./img/circulo/3.png" alt="Circulo"
+                                width="50" height="50">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <h3>Color de la línea ganadora</h3>
+                    <input type="color" id="colorLinea" value="#000000"
+                        onchange="cambiarColorLinea(this.value)">
+                    <h3>Color de celdas inpar</h3>
+                    <input type="color" id="colorCeldasAlternadas"
+                        value="#ffffff"
+                        onchange="cambiarColorCeldasAlternadas(this.value)">
+
+                    <h3>Color de celdas par</h3>
+                    <input type="color" id="colorOtrasCeldas"
+                        value="#f0f0f0"
+                        onchange="cambiarColorOtrasCeldas(this.value)">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
