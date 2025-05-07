@@ -1,5 +1,232 @@
-input[type="button"] {
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tablero input[type="button"] {
     width: 150px;
     height: 150px;
     font-size: 80px;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+td {
+    position: relative;
+    border: 4px solid black;
+}
+
+tr:first-child td {
+    border-top: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:first-child {
+    border-left: none;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+.win-row-1::after {
+    content: "";
+    position: absolute;
+    top: 16.66%;
+    left: 0;
+    right: 5px;
+    height: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-row-2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 5px;
+    height: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-row-3::after {
+    content: "";
+    position: absolute;
+    top: 83.33%;
+    left: 0;
+    right: 5px;
+    height: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-col-1::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: 16.66%;
+    width: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-col-2::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: 50%;
+    width: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-col-3::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: 83.33%;
+    width: 5px;
+    background-color: #000000;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-diag-1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% * 1.4);
+    height: 5px;
+    background-color: #000000;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.win-diag-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% * 1.4);
+    height: 5px;
+    background-color: #000000;
+    transform: rotate(-45deg);
+    transform-origin: top right;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.board-section {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-group {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group-title {
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.status-section {
+    text-align: center;
+}
+
+.turno-actual {
+    font-weight: bold;
+}
+
+.ganador-text {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.timer-restart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-box {
+    text-align: center;
+}
+
+#TiempoGlobal {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#Reiniciar {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff5959;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#Reiniciar:hover {
+    background-color: #e04848;
+}
+
+input[type="color"] {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
 }
